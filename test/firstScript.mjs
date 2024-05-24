@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import { Builder, By, until } from 'selenium-webdriver';
 
 
-describe.only('log in flow', async => {
+describe('log in flow', async => {
 let driver;
 beforeEach(async() => {
 driver = await new Builder().forBrowser('firefox').build();
@@ -12,7 +12,7 @@ afterEach(async () => {
 await driver.quit()
 })
 
-it.only('should log in successfully', async () => {
+it('should log in successfully', async () => {
 let incorrectMsg = '"username" is not allowed to be empty. "password" is not allowed to be empty'
 await driver.sleep(1000)
 await driver.findElement(By.xpath("html//div[@id='root']/div[1]//form[@class='mt-12 space-y-4']/div[1]/div[1]/input")).sendKeys('')
